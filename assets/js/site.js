@@ -9,28 +9,19 @@
   const CS = window.I18N_CS || {};
   const EN_JS = {
     'js.copied': 'E-mail copied',
-    'js.cl.ready': 'Loaded 6 files from S3. Run a check.',
+    'js.cl.ready': 'Illustrating 6 synthetic files. Run a check.',
     'js.cl.ok': 'ok',
     'js.cl.dup': 'duplicate IDs',
     'js.cl.miss': '"price" missing',
-    'js.cl.fixed': 'fixed',
+    'js.cl.fixed': 'reviewed',
     'js.cl.dupLog': 'Checking duplicate IDs…\n',
     'js.cl.colLog': 'Checking column "price"…\n',
     'js.cl.found': 'found',
     'js.cl.fixLog': 'Fixing…\n',
-    'js.cl.drop': 'dropped duplicate rows',
+    'js.cl.drop': 'flagged duplicate IDs for review',
     'js.cl.rename': 'renamed column',
-    'js.cl.zip': 'ZIP ready — 6 files, all clean ✓',
-    'js.cl.allOk': 'all clean',
-    'js.cx.scan': 'scanning…',
-    'js.cx.chart': 'chart',
-    'js.cx.text': 'text',
-    'js.cx.done': 'Done — 2 charts found, values saved to CSV.',
-    'js.cx.webDone': 'Done — 2 charts saved from iframes (title, data, source).',
-    'js.cx.cap': 'New homes per year (sample)',
-    'js.cx.pdfSrc': 'reports/market-q3.pdf',
-    'js.cx.webSrc': 'https://example-research.com/housing-2023',
-    'cx.empty': 'Press Run',
+    'js.cl.zip': 'Illustration complete — download ZIPs in the Python app.',
+    'js.cl.allOk': 'review complete',
   };
   let lang = 'en';
   const t = (k) => (lang === 'cs' && CS[k] != null ? CS[k] : EN_JS[k] ?? k);
@@ -234,80 +225,6 @@
     btn('reset').addEventListener('click', () => { if (!busy) reset(); });
     reset();
     langListeners.push(() => { if (!busy) reset(); });
-  }
-
-  /* ── Chart extractor re-creation ───────────────────────────────────── */
-  const cx = $('#sim-charts');
-  if (cx) {
-    const pagesEl = $('[data-pages]', cx);
-    const srcEl = $('[data-src]', cx);
-    const svg = $('[data-chart]', cx);
-    const cap = $('[data-cap]', cx);
-    const valuesEl = $('[data-values]', cx);
-    const runBtn = $('[data-run]', cx);
-    const statusEl = $('[data-status]', cx);
-    const CHART_PAGES = [2, 4];
-    const DATA = [[2018, 5.2], [2019, 6.1], [2020, 5.8], [2021, 7.4], [2022, 8.0], [2023, 7.1]];
-    const miniChart = '<svg viewBox="0 0 40 24" aria-hidden="true"><path d="M2 21 H38 M2 2 V21" stroke="currentColor" stroke-opacity=".35" fill="none"/><path d="M4 17 L11 13 L17 15 L24 8 L31 5 L37 9" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
-    let mode = 'pdf', busy = false;
-
-    const lines = (n) => Array.from({ length: n }, () => '<i></i>').join('');
-    const idle = () => { valuesEl.innerHTML = `<tr><td colspan="2">${t('cx.empty')}</td></tr>`; statusEl.innerHTML = ''; };
-    const buildPages = () => {
-      pagesEl.innerHTML = Array.from({ length: 6 }, (_, i) => {
-        const body = CHART_PAGES.includes(i) ? lines(2) + miniChart + lines(2) : lines(7);
-        return `<div class="cx-page" data-i="${i}">${body}<span class="score"></span></div>`;
-      }).join('');
-      srcEl.textContent = t(mode === 'pdf' ? 'js.cx.pdfSrc' : 'js.cx.webSrc');
-      cap.textContent = '—';
-      svg.innerHTML = '';
-    };
-    const drawChart = async () => {
-      const W = 240, H = 120, p = 18;
-      const xs = (i) => p + (i * (W - 2 * p)) / (DATA.length - 1);
-      const ys = (v) => H - p - ((v - 4) / 5) * (H - 2 * p);
-      const d = DATA.map(([, v], i) => `${i ? 'L' : 'M'}${xs(i).toFixed(1)} ${ys(v).toFixed(1)}`).join(' ');
-      svg.innerHTML = `<path class="ax" d="M${p} ${H - p} H${W - p} M${p} ${p} V${H - p}"/>` +
-        `<path class="ln" d="${d}"/>` + DATA.map(([, v], i) => `<circle class="pt" cx="${xs(i)}" cy="${ys(v)}" r="3"/>`).join('');
-      const path = $('.ln', svg);
-      if (!reduceMotion) {
-        const len = path.getTotalLength();
-        path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
-        path.getBoundingClientRect();
-        path.style.transition = 'stroke-dashoffset .9s ease';
-        path.style.strokeDashoffset = 0;
-      }
-      cap.textContent = t('js.cx.cap');
-      valuesEl.innerHTML = '';
-      for (const [y, v] of DATA) { valuesEl.insertAdjacentHTML('beforeend', `<tr><td>${y}</td><td class="num">${v.toFixed(1)}k</td></tr>`); await wait(120); }
-    };
-    const run = async () => {
-      if (busy) return; busy = true; runBtn.disabled = true;
-      buildPages();
-      valuesEl.innerHTML = `<tr><td colspan="2">${t('js.cx.scan')}</td></tr>`;
-      statusEl.innerHTML = '';
-      for (const pg of $$('.cx-page', pagesEl)) {
-        pg.classList.add('scan');
-        await wait(320);
-        const hit = CHART_PAGES.includes(+pg.dataset.i);
-        const score = hit ? 0.94 + Math.random() * 0.05 : 0.01 + Math.random() * 0.06;
-        $('.score', pg).textContent = `${t(hit ? 'js.cx.chart' : 'js.cx.text')} ${score.toFixed(2)}`;
-        pg.classList.remove('scan'); pg.classList.add('done');
-        if (hit) pg.classList.add('hit');
-      }
-      await drawChart();
-      statusEl.innerHTML = `<span class="st ok">${t(mode === 'pdf' ? 'js.cx.done' : 'js.cx.webDone')}</span>`;
-      busy = false; runBtn.disabled = false;
-    };
-    $$('.cx-modes button', cx).forEach((b) => b.addEventListener('click', () => {
-      if (busy) return;
-      mode = b.dataset.mode;
-      $$('.cx-modes button', cx).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-      buildPages(); idle();
-    }));
-    runBtn.addEventListener('click', run);
-    buildPages();
-    langListeners.push(() => { if (!busy) { buildPages(); idle(); } });
   }
 
   applyLang(initialLang);
