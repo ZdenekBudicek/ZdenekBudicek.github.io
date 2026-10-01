@@ -322,6 +322,7 @@ section { scroll-margin-top: 72px; }
 .mini-year { font: 500 12px/1 var(--mono); color: var(--text-3); }
 .mini p { margin: 0; color: var(--text-2); font-size: 14.5px; }
 .mini .tag-list { margin-top: auto; padding-top: 6px; }
+.mini .btn { align-self: flex-start; margin-top: 4px; }
 .subhead { font: 600 13px/1 var(--mono); color: var(--text-3); letter-spacing: .06em; text-transform: uppercase; margin: 72px 0 0; }
 .subhead + .mini-grid { margin-top: 18px; }
 
