@@ -2,6 +2,10 @@
 // every element with data-i18n="key" gets the Czech innerHTML below when CZ is picked.
 // Keys starting with "js." are strings used by the interactive demos in site.js.
 window.I18N_CS = {
+  "ls.source": "Simulátor obtížnosti · zdrojový kód ↗",
+  "ls.sample": "Samostatná ukázka pro .NET s regresními kontrolami. Profily hráčů jsou návrhové předpoklady; skutečné testování s hráči je stále potřeba.",
+  "fc.sample": "Veřejná ukázka v C#: čerstvý anonymní save nesmí po přihlášení přepsat pokročilejší postup účtu. Vyčleněná rozhodovací pravidla, spustitelný příklad a testy krajních případů; celá hra zůstává neveřejná.",
+  "fc.source": "Řešení konfliktů uloženého postupu · kód ↗",
   "cl.release": "Veřejná verze: kontrola a opravy před vydáním v roce 2026, regresní testy a konfigurace přes lokální proměnné prostředí.",
   "skip": "Přeskočit na obsah",
   "nav.exp": "Zkušenosti",
@@ -145,14 +149,14 @@ window.I18N_CS = {
   "ls.cap": "Hratelnost · boss vás zasáhne · dveře k bossovi",
   "ls.meta": "CornerForge · další hra",
   "ls.pill": "VE VÝVOJI",
-  "ls.lead": "Hra na načasování jedním ťuknutím: ručička obíhá kolem zámku a vy ťuknete, když je nad cílem. Zatím deset levelů, které končí třífázovým bossem za zapečetěnými dveřmi.",
-  "ls.b1": "<strong>Vyvažování pomocí simulací</strong>: simulátor hráče v .NET a audity v editoru (kampaň, rush vlny, boss) — před každým buildem se zkontroluje 120 seedovaných průchodů kampaní.",
+  "ls.lead": "Hra na načasování jedním ťuknutím: ručička obíhá kolem zámku a vy ťuknete, když dorazí k cíli. Kampaň s obměnami mechanik a souboji s bossy, aktuálně ve vývoji.",
+  "ls.b1": "<strong>Veřejný simulátor obtížnosti</strong>: skutečná pravidla hry v C# zkoušená proti čtyřem předpokládaným profilům hráčů. Opakovatelné běhy, analýza opakovaných pokusů a JSON reporty umožňují porovnávat změny obtížnosti.",
   "ls.b2": "Malé nástroje v Pythonu na generování zvuků a efektů.",
 
-  "mini.h": "Menší projekty",
+  "mini.h": "Další veřejné projekty",
   "mini.zip": "Nástroj v C# pro příkazovou řádku, který doplní soubory, které Průzkumník Windows potichu vynechá při rozbalování zipů z macOS (dlouhé cesty, normalizace Unicode). Kontrola CRC32, nikdy nic nepřepíše, s regresním testem.",
-  "mini.shop.h": "Správa obchodu a skladu",
-  "mini.shop": "Konzolová aplikace v Pythonu nad PostgreSQL: relační schéma s cizími klíči, role a oprávnění zaměstnanců, hashování hesel PBKDF2, sklad, který se mění s každou objednávkou, a reporty přes joiny.",
+  "mini.shop.h": "SQL správa obchodu a skladu",
+  "mini.shop": "Sklad a objednávky v Pythonu a PostgreSQL: atomické změny zásob, zámky řádků proti přeprodeji posledního kusu, bezpečné opakované storno a role zaměstnanců. Výrazně přepracovaná veřejná verze s testy souběhu nad skutečnou databází.",
 
   "gr.h": "Jak jsem se sem dostal",
   "gr.p": "Od herních serverů, které jsem provozoval jako teenager, po hru v obchodě.",
