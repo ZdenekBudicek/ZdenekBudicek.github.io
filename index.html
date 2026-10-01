@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffb020'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='%231a1204'%3EZB%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=202609302317">
+  <link rel="stylesheet" href="assets/css/site.css?v=202610011617">
   <script>
     document.documentElement.classList.remove('no-js');
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -115,7 +115,7 @@
         </article>
         <article class="card reveal">
           <span class="card-k" data-i18n="fit.2k">OPERATIONS</span>
-          <h3 data-i18n="fit.2h">Shift work is my normal</h3>
+          <h3 data-i18n="fit.2h">Shift work is nothing new to me</h3>
           <p data-i18n="fit.2">I lead afternoon and night shifts of 10–15 people and I'm the first point of escalation when something goes wrong. Nights, weekends and rotating shifts are fine.</p>
         </article>
         <article class="card reveal">
@@ -251,8 +251,8 @@
           <h3>Portfolio Tracker <span class="pill pill-private" data-i18n="tr.pill">DAILY USE</span></h3>
           <p class="project-lead" data-i18n="tr.lead">Tracks a stock &amp; crypto portfolio across three brokers — live Trading&nbsp;212 API sync plus XTB (.xlsx) and Revolut (.pdf) statement import — and calculates returns in USD/CZK, dividend income and risk metrics, and generates a Czech tax report.</p>
           <ul class="bullets">
-            <li data-i18n="tr.b1"><strong>PostgreSQL with row-level security</strong>; triggers keep positions and cash consistent with the transaction ledger (43 migrations, 15 tables).</li>
-            <li data-i18n="tr.b2"><strong>10 serverless functions + scheduled jobs</strong> (pg_cron, GitHub Actions): price refresh with a provider fallback chain and a shared cache, so each ticker is fetched once for all users.</li>
+            <li data-i18n="tr.b1"><strong>PostgreSQL with row-level security</strong>; triggers keep positions and cash consistent with the transaction ledger.</li>
+            <li data-i18n="tr.b2"><strong>11 serverless functions + scheduled jobs</strong> (pg_cron, GitHub Actions): price refresh with a provider fallback chain and a shared cache, so each ticker is fetched once for all users.</li>
             <li data-i18n="tr.b3"><strong>Resumable broker sync</strong> with a cursor to stay within execution time limits and respect API rate limits; statement import with <strong>duplicate detection</strong>, so re-uploading a file doesn't count trades twice.</li>
             <li data-i18n="tr.b4"><strong>FIFO cost basis</strong> per broker account with historical FX rates, the Czech 3-year tax-exemption test per lot, Sharpe ratio and max drawdown.</li>
             <li data-i18n="tr.b5">Broker API keys <strong>encrypted at rest</strong> (pgcrypto + Vault). ~230 unit tests (Vitest).</li>
@@ -260,6 +260,9 @@
           <ul class="tag-list" aria-label="Tech used">
             <li class="tag">TypeScript</li><li class="tag">React</li><li class="tag">PostgreSQL</li><li class="tag">Supabase</li><li class="tag">Deno</li><li class="tag">GitHub Actions</li><li class="tag">Vitest</li>
           </ul>
+          <div class="project-links">
+            <a class="btn btn-sm" href="https://github.com/ZdenekBudicek/stock-portfolio-tracker" target="_blank" rel="noopener" data-i18n="src.link">Source code ↗</a>
+          </div>
         </div>
       </article>
 
@@ -304,7 +307,7 @@
             <li data-i18n="fc.b2"><strong>Cloud save</strong> with merge rules, snapshots and versioned save migrations; Google Play Games / Game Center sign-in and server-side account deletion.</li>
             <li data-i18n="fc.b3"><strong>Adaptive difficulty</strong> (skill rating, retry assist) plus editor tools: a campaign simulator and a level-balance validator for generated levels.</li>
             <li data-i18n="fc.b4"><strong>Monetisation &amp; monitoring</strong>: ad mediation, in-app purchases, Firebase Crashlytics and Remote Config, GDPR/US consent flow.</li>
-            <li data-i18n="fc.b5"><strong>Quality</strong>: 3,000+ EditMode/PlayMode tests, scripted Android &amp; iOS release builds, written release and crash audits.</li>
+            <li data-i18n="fc.b5"><strong>Testing &amp; releases</strong>: 3,000+ EditMode/PlayMode tests, scripted Android &amp; iOS release builds, written release and crash audits.</li>
           </ul>
           <ul class="tag-list" aria-label="Tech used">
             <li class="tag">Unity 6</li><li class="tag">C#</li><li class="tag">UGS Cloud Code (JS)</li><li class="tag">Firebase</li><li class="tag">Android / iOS</li><li class="tag">NUnit</li>
@@ -463,9 +466,9 @@
           </div>
         </div>
         <div class="project-body">
-          <div class="project-meta"><div class="project-meta-text"><strong data-i18n="ch.meta">Gaming portal · as a teenager</strong><span data-i18n="ch.when">portal ~3 years · Chrone Studio 2015</span></div></div>
+          <div class="project-meta"><div class="project-meta-text"><strong data-i18n="ch.meta">Gaming portal &amp; streamer group</strong><span data-i18n="ch.when">portal ~3 years · Chrone Studio 2015</span></div></div>
           <h3>Chrone.cz <span class="pill pill-private" data-i18n="ch.pill">MY FIRST PROJECT</span></h3>
-          <p class="project-lead" data-i18n="ch.lead">Before I learned to code, I ran a Czech &amp; Slovak gaming portal with its own game servers. For about three years it earned enough to pay for itself.</p>
+          <p class="project-lead" data-i18n="ch.lead">When I was a teenager, I ran a Czech &amp; Slovak gaming portal with its own game servers. It lasted about three years and covered its own costs.</p>
           <ul class="bullets">
             <li data-i18n="ch.b1"><strong>Game servers:</strong> about five public Counter-Strike 1.6 servers with different game modes (e.g. Jailbreak, Furien, Dust2 Only) and a Minecraft world built with a small team, each with its own regular players. When the portal stopped being profitable, I shut it down.</li>
             <li data-i18n="ch.b2"><strong>Chrone Studio:</strong> a few months later I reused the name for a new idea — managing a small group of streamers (League of Legends, CS:GO, Dota 2, SMITE). I handled graphics, stream setup and everything around the streams; they created the content. Our first official stream (Nov 2015) had <strong>186 live viewers</strong>.</li>
@@ -481,6 +484,7 @@
           <div class="mini-top"><h4>zipfill</h4><span class="mini-year">2026</span></div>
           <p data-i18n="mini.zip">C# command-line tool that recovers files Windows Explorer silently skips when unpacking macOS zips (long paths, Unicode normalisation). CRC32-verified, never overwrites, with a regression test script.</p>
           <ul class="tag-list"><li class="tag">C#</li><li class="tag">.NET 9</li><li class="tag">PowerShell</li></ul>
+          <a class="btn btn-sm" href="https://github.com/ZdenekBudicek/zipfill" target="_blank" rel="noopener" data-i18n="src.link">Source code ↗</a>
         </article>
         <article class="mini reveal">
           <div class="mini-top"><h4 data-i18n="mini.shop.h">Shop &amp; stock management</h4><span class="mini-year">2023</span></div>
@@ -496,10 +500,10 @@
     <div class="wrap">
       <div class="section-head">
         <h2 data-i18n="gr.h">How I got here</h2>
-        <p data-i18n="gr.p">From running game servers as a teenager to a game in the store — each project a step up from the last.</p>
+        <p data-i18n="gr.p">From running game servers as a teenager to a game in the store.</p>
       </div>
       <ol class="growth">
-        <li class="reveal"><time data-i18n="gr.0t">until 2015</time><div><b>Chrone.cz</b><p data-i18n="gr.0">As a teenager I ran Chrone.cz, a gaming portal with Counter-Strike 1.6 and Minecraft servers. It paid for itself for about three years; when it stopped being profitable, I shut it down. A few months later I brought the name back for a new idea — managing a small group of streamers (<a href="#chrone">more above</a>).</p></div></li>
+        <li class="reveal"><time data-i18n="gr.0t">until 2015</time><div><b>Chrone.cz</b><p data-i18n="gr.0">A gaming portal with Counter-Strike 1.6 and Minecraft servers, then Chrone Studio — a few streamers whose channels I ran behind the scenes (<a href="#chrone">more above</a>).</p></div></li>
         <li class="reveal"><time>01/2022</time><div><b data-i18n="gr.1h">First Python programs</b><p data-i18n="gr.1">A slot machine and a Tkinter hangman game with a GUI — a year before BuiltMind.</p></div></li>
         <li class="reveal"><time>04/2023</time><div><b data-i18n="gr.2h">First database app</b><p data-i18n="gr.2">Shop &amp; stock management on PostgreSQL with roles and hashed passwords.</p></div></li>
         <li class="reveal hl"><time>08/2023</time><div><b data-i18n="gr.3h">Scrapers in production</b><p data-i18n="gr.3">My code starts running on AWS Lambda every day — it grows to 100+ scrapers.</p></div></li>
@@ -611,6 +615,7 @@
       <ul class="contact-list reveal">
         <li><a href="mailto:budicekz97@gmail.com" data-copy="budicekz97@gmail.com"><span class="k">EMAIL</span><span class="v">budicekz97@gmail.com</span><span class="copy" data-i18n="ct.copy">copy</span></a></li>
         <li><a href="https://www.linkedin.com/in/zden%C4%9Bk-bud%C3%AD%C4%8Dek-545292280/" target="_blank" rel="noopener"><span class="k">LINKEDIN</span><span class="v">Zdeněk Budíček ↗</span></a></li>
+        <li><a href="https://github.com/ZdenekBudicek" target="_blank" rel="noopener"><span class="k">GITHUB</span><span class="v">ZdenekBudicek ↗</span></a></li>
         <li><div><span class="k" data-i18n="ct.k1">WORK</span><span class="v" data-i18n="ct.v1">Remote</span></div></li>
         <li><div><span class="k" data-i18n="ct.k2">BASED IN</span><span class="v" data-i18n="ct.v2">Třešť, Czech Republic</span></div></li>
       </ul>
@@ -634,7 +639,7 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/i18n.js?v=202609302317" defer></script>
-<script src="assets/js/site.js?v=202609302317" defer></script>
+<script src="assets/js/i18n.js?v=202610011617" defer></script>
+<script src="assets/js/site.js?v=202610011617" defer></script>
 </body>
 </html>
