@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffb020'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='%231a1204'%3EZB%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=202610011637">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261001172640">
   <script>
     document.documentElement.classList.remove('no-js');
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -58,12 +58,7 @@
         <div>
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Open to remote IT roles · backend · data · risk</span></p>
           <h1 data-i18n="hero.h1">I build <em>backends, data tools</em> and games — and ship&nbsp;them.</h1>
-          <p class="lede" data-i18n="hero.lede">
-            Python &amp; TypeScript developer. At <strong>BuiltMind</strong> I wrote <strong>100+ production scrapers</strong> on AWS Lambda
-            and internal tools that made my colleagues' work easier. On my own, I've shipped
-            <strong>4Corners</strong> to Google Play and built a full-stack portfolio tracker you can try right here.
-            My day job as a CNC Setter / Shift Manager taught me to own the result.
-          </p>
+          <p class="lede" data-i18n="hero.lede">Python &amp; TypeScript developer with 16 months of paid, part-time remote experience at <strong>BuiltMind</strong>, where I wrote <strong>100+ production scrapers</strong> on AWS Lambda and internal tools. I co-founded CornerForge and developed <strong>4Corners</strong>, now on Google Play. I also built a full-stack portfolio tracker you can try here.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="#work"><span data-i18n="hero.cta1">See my work</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14m0 0 6-6m-6 6-6-6"/></svg>
@@ -137,7 +132,7 @@
         <article class="job reveal">
           <div class="job-when"><strong data-i18n="exp.cf.when">Jul 2025 – present</strong><span data-i18n="exp.cf.type">own studio, alongside full-time job</span></div>
           <div>
-            <h3 data-i18n="exp.cf.title">Co-founder &amp; Lead Developer</h3>
+            <h3 data-i18n="exp.cf.title">Co-founder &amp; Developer</h3>
             <p class="job-org"><span data-i18n="exp.cf.org">CornerForge — two-person indie game studio</span> · <a href="https://4cornersplay.online/" target="_blank" rel="noopener">4cornersplay.online</a></p>
             <ul class="bullets">
               <li data-i18n="exp.cf.b1">Shipped <strong>4Corners</strong> to Google Play (iOS in TestFlight): gameplay, backend (leagues, cloud save), ads &amp; IAP, releases and store compliance.</li>
@@ -152,7 +147,7 @@
             <h3 data-i18n="exp.bm.title">Junior Data &amp; Python Developer</h3>
             <p class="job-org" data-i18n="exp.bm.org">BuiltMind — proptech data, Prague</p>
             <ul class="bullets">
-              <li data-i18n="exp.bm.b1">Wrote and maintained <strong>100+ scrapers</strong> on AWS Lambda, plus internal tools: Scraping Cleaner, a chart extractor and a daily data-quality check (see <a href="#builtmind">below</a>).</li>
+              <li data-i18n="exp.bm.b1">Wrote and maintained <strong>100+ scrapers</strong> on AWS Lambda, plus internal tools: Scraping Cleaner and a daily data-quality check (see <a href="#builtmind">below</a>).</li>
               <li data-i18n="exp.bm.b2">Went from my first scraper to internal tools used by the whole team in 16 months — <a href="#reference">reference letter</a> from the Operations Manager.</li>
             </ul>
           </div>
@@ -325,7 +320,7 @@
           <div class="sim" id="sim-cleaner">
             <div class="sim-bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span class="title">Scraping Cleaner</span><span class="demo-tag" data-i18n="sim.tag">Interactive re-creation</span></div>
             <div class="sim-body">
-              <div class="sim-src"><span data-i18n="cl.src">Source</span> <code>s3://scraped-data/prague/2023-11/</code></div>
+              <div class="sim-src"><span data-i18n="cl.src">Source</span> <code>s3://example-bucket/sample-data/</code></div>
               <div class="sim-table-wrap">
                 <table class="sim-table">
                   <thead><tr><th data-i18n="cl.th1">File</th><th class="num" data-i18n="cl.th2">Rows</th><th data-i18n="cl.th3">Status</th></tr></thead>
@@ -335,13 +330,13 @@
               <div class="sim-actions">
                 <button type="button" data-act="dup" data-i18n="cl.a1">1 · Check duplicate IDs</button>
                 <button type="button" data-act="col" data-i18n="cl.a2">2 · Check column "price"</button>
-                <button type="button" class="primary" data-act="fix" disabled data-i18n="cl.a3">3 · Fix &amp; pack ZIP</button>
+                <button type="button" class="primary" data-act="fix" disabled data-i18n="cl.a3">3 · Illustrate bulk edit</button>
                 <button type="button" data-act="reset" data-i18n="cl.a4">Reset</button>
               </div>
               <pre class="sim-log" data-log aria-live="polite"></pre>
             </div>
           </div>
-          <p class="note" data-i18n="cl.note">Re-created in the browser with sample files; the real tool ran on the company's S3 data.</p>
+          <p class="note" data-i18n="cl.note">Browser illustration with synthetic data; no files are uploaded or downloaded here. The Python app linked below processes real CSV / ZIP inputs and optional S3 folders.</p>
         </div>
         <div class="project-body">
           <div class="project-meta"><div class="project-meta-text"><strong data-i18n="cl.meta">BuiltMind · internal tool</strong><span data-i18n="d.cl">Nov 2023</span></div></div>
@@ -353,75 +348,12 @@
             <li data-i18n="cl.b3">Bulk fixes — drop, rename or add a column, rename files — and downloads the result as one ZIP.</li>
           </ul>
           <ul class="tag-list"><li class="tag">Python</li><li class="tag">Streamlit</li><li class="tag">pandas</li><li class="tag">boto3 / S3</li></ul>
+          <p class="note" data-i18n="cl.release">Public edition: reviewed and repaired for release in 2026, with regression tests and local environment configuration.</p>
+          <div class="project-links"><a class="btn btn-sm" href="https://github.com/ZdenekBudicek/scraping-cleaner" target="_blank" rel="noopener" data-i18n="src.link">Source code ↗</a></div>
         </div>
       </article>
 
-      <!-- Chart extractor -->
-      <article class="project reveal" id="charts">
-        <div class="project-media">
-          <div class="sim" id="sim-charts">
-            <div class="sim-bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span class="title">chart-extractor</span><span class="demo-tag" data-i18n="sim.tag">Interactive re-creation</span></div>
-            <div class="sim-body">
-              <div class="sim-src">
-                <div class="cx-modes" role="group" aria-label="Input">
-                  <button type="button" data-mode="pdf" aria-pressed="true" data-i18n="cx.m1">PDF reports</button>
-                  <button type="button" data-mode="web" aria-pressed="false" data-i18n="cx.m2">Web article</button>
-                </div>
-                <code data-src>reports/market-q3.pdf</code>
-              </div>
-              <div class="cx-pages" data-pages></div>
-              <div class="sim-actions"><button type="button" class="primary" data-run data-i18n="cx.run">▶ Run extraction</button></div>
-              <div class="cx-out">
-                <div class="cx-chart"><div class="cap" data-cap>—</div><svg viewBox="0 0 240 120" data-chart aria-hidden="true"></svg></div>
-                <div class="sim-table-wrap"><table class="sim-table"><thead><tr><th data-i18n="cx.th1">Year</th><th class="num" data-i18n="cx.th2">Value</th></tr></thead><tbody data-values><tr><td colspan="2" data-i18n="cx.empty">Press Run</td></tr></tbody></table><p class="cx-status" data-status aria-live="polite"></p></div>
-              </div>
-            </div>
-          </div>
-          <p class="note" data-i18n="cx.note">Illustration with sample data. The originals processed third-party market reports, which can't be shown here.</p>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><div class="project-meta-text"><strong data-i18n="cx.meta">BuiltMind · prototype</strong><span data-i18n="d.cx">Sep – Oct 2023</span></div></div>
-          <h3 data-i18n="cx.h">Chart extractor</h3>
-          <p class="project-lead" data-i18n="cx.lead">Market reports hide their best numbers in charts. I built two prototypes that find those charts and turn them back into data.</p>
-          <ul class="bullets">
-            <li data-i18n="cx.b1"><strong>Web:</strong> a Selenium bot opens an article, finds the embedded Infogram charts inside iframes, scrolls until they load and saves each chart's title, data and source.</li>
-            <li data-i18n="cx.b2"><strong>PDF:</strong> renders every page of a batch of reports (PyMuPDF, 300 DPI), a Keras CNN classifier (VGG16) flags the pages that contain a chart, and a pipeline built on the open-source GraphMaster project reads line charts back into CSV values.</li>
-          </ul>
-          <ul class="tag-list"><li class="tag">Python</li><li class="tag">Selenium</li><li class="tag">PyMuPDF</li><li class="tag">TensorFlow / Keras</li><li class="tag">OpenCV</li></ul>
-        </div>
-      </article>
-
-      <!-- ZručnáPráce -->
-      <article class="project flip reveal" id="zrucnaprace">
-        <div class="project-media">
-          <div class="browser" data-shots>
-            <div class="browser-bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="url">zrucnaprace · <span data-url>Mapa</span></div></div>
-            <div class="browser-body">
-              <img data-shot-img src="assets/img/zrucnaprace/map.webp" alt="ZručnáPráce: interactive map of Czech regions" width="1440" height="900" loading="lazy">
-            </div>
-            <div class="tabs-strip" role="group" aria-label="Screens">
-              <button type="button" aria-pressed="true" data-src="assets/img/zrucnaprace/map.webp" data-label="Mapa" data-i18n="zp.t1">Region map</button>
-              <button type="button" aria-pressed="false" data-src="assets/img/zrucnaprace/home.webp" data-label="Úvod" data-i18n="zp.t2">Home</button>
-              <button type="button" aria-pressed="false" data-src="assets/img/zrucnaprace/how.webp" data-label="Jak to funguje" data-i18n="zp.t3">How it works</button>
-              <button type="button" aria-pressed="false" data-src="assets/img/zrucnaprace/firms.webp" data-label="Pro firmy" data-i18n="zp.t4">For companies</button>
-            </div>
-          </div>
-          <p class="note" data-i18n="zp.note">Screenshots of the app — switch screens with the buttons above. In the app itself, hovering a region highlights it and clicking filters tradespeople by that region.</p>
-        </div>
-        <div class="project-body">
-          <div class="project-meta"><div class="project-meta-text"><strong data-i18n="zp.meta">Personal project · web app</strong><span data-i18n="d.zp">Mar – Jun 2024</span></div></div>
-          <h3>ZručnáPráce</h3>
-          <p class="project-lead" data-i18n="zp.lead">A directory where tradespeople and companies register and customers find them by Czech region — my first full web app.</p>
-          <ul class="bullets">
-            <li data-i18n="zp.b1"><strong>Django + PostgreSQL</strong> back end: custom user model with e-mail login, company profiles with regions and services.</li>
-            <li data-i18n="zp.b2"><strong>Sign-in with Google</strong> (OAuth, django-allauth) and password reset by e-mail.</li>
-            <li data-i18n="zp.b3">Czech company-ID (IČO) and phone validation; an <strong>interactive SVG map</strong> that filters by region.</li>
-          </ul>
-          <ul class="tag-list"><li class="tag">Django</li><li class="tag">PostgreSQL</li><li class="tag">OAuth</li><li class="tag">Webflow</li></ul>
-        </div>
-      </article>
-
-      <!-- Spin Lock -->
+<!-- Spin Lock -->
       <article class="project reveal" id="spinlock">
         <div class="project-media">
           <div class="media-frame">
@@ -486,12 +418,7 @@
           <ul class="tag-list"><li class="tag">C#</li><li class="tag">.NET 9</li><li class="tag">PowerShell</li></ul>
           <a class="btn btn-sm" href="https://github.com/ZdenekBudicek/zipfill" target="_blank" rel="noopener" data-i18n="src.link">Source code ↗</a>
         </article>
-        <article class="mini reveal">
-          <div class="mini-top"><h4 data-i18n="mini.shop.h">Shop &amp; stock management</h4><span class="mini-year">2023</span></div>
-          <p data-i18n="mini.shop">Python CLI on PostgreSQL: relational schema with foreign keys, employee roles and permissions, PBKDF2 password hashing, stock that updates with each order, reporting queries with joins.</p>
-          <ul class="tag-list"><li class="tag">Python</li><li class="tag">PostgreSQL</li><li class="tag">SQL</li></ul>
-        </article>
-      </div>
+</div>
     </div>
   </section>
 
@@ -507,7 +434,6 @@
         <li class="reveal"><time>01/2022</time><div><b data-i18n="gr.1h">First Python programs</b><p data-i18n="gr.1">A slot machine and a Tkinter hangman game with a GUI — a year before BuiltMind.</p></div></li>
         <li class="reveal"><time>04/2023</time><div><b data-i18n="gr.2h">First database app</b><p data-i18n="gr.2">Shop &amp; stock management on PostgreSQL with roles and hashed passwords.</p></div></li>
         <li class="reveal hl"><time>08/2023</time><div><b data-i18n="gr.3h">Scrapers in production</b><p data-i18n="gr.3">My code starts running on AWS Lambda every day.</p></div></li>
-        <li class="reveal"><time>09/2023</time><div><b data-i18n="gr.4h">Chart extractor</b><p data-i18n="gr.4">Selenium, a CNN page classifier and chart-to-data extraction.</p></div></li>
         <li class="reveal"><time>11/2023</time><div><b data-i18n="gr.5h">Scraping Cleaner</b><p data-i18n="gr.5">My first tool used by the whole team, not just by me.</p></div></li>
         <li class="reveal"><time>03/2024</time><div><b data-i18n="gr.6h">ZručnáPráce</b><p data-i18n="gr.6">First full web app: Django, PostgreSQL, Google sign-in.</p></div></li>
         <li class="reveal hl"><time>07/2025</time><div><b data-i18n="gr.7h">4Corners</b><p data-i18n="gr.7">Co-founded CornerForge; the game later shipped to Google Play with a real backend and 3,000+ tests.</p></div></li>
@@ -568,7 +494,7 @@
       <div class="skills">
         <div class="skill-group reveal">
           <h3 data-i18n="sk.1h">Backend &amp; databases</h3>
-          <p class="where">Portfolio Tracker, 4Corners, ZručnáPráce</p>
+          <p class="where">Portfolio Tracker, 4Corners</p>
           <ul class="tag-list"><li class="tag">PostgreSQL</li><li class="tag">RLS · triggers · RPC</li><li class="tag">Supabase</li><li class="tag">REST APIs</li><li class="tag" data-i18n="sk.1a">Serverless functions</li><li class="tag">Cron jobs</li><li class="tag">Django</li></ul>
         </div>
         <div class="skill-group reveal">
@@ -588,7 +514,7 @@
         </div>
         <div class="skill-group reveal">
           <h3 data-i18n="sk.5h">Data</h3>
-          <p class="where">Scraping Cleaner, chart extractor</p>
+          <p class="where">Scraping Cleaner, Portfolio Tracker</p>
           <ul class="tag-list"><li class="tag">pandas</li><li class="tag">NumPy</li><li class="tag">Streamlit</li><li class="tag" data-i18n="sk.5t">Data validation</li></ul>
         </div>
         <div class="skill-group reveal">
@@ -639,7 +565,7 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/i18n.js?v=202610011637" defer></script>
-<script src="assets/js/site.js?v=202610011637" defer></script>
+<script src="assets/js/i18n.js?v=20261001172640" defer></script>
+<script src="assets/js/site.js?v=20261001172640" defer></script>
 </body>
 </html>

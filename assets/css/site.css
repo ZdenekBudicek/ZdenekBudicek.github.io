@@ -153,9 +153,9 @@ a { color: inherit; }
 @media (max-width: 820px) {
   .nav { flex-wrap: wrap; height: auto; padding-top: 12px; gap: 8px 16px; }
   .nav-actions { margin-left: auto; }
-  .nav-links { order: 3; width: 100%; margin: 0 -8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 8px; }
+  .nav-links { order: 3; width: 100%; margin: 0; flex-wrap: wrap; gap: 0; padding-bottom: 8px; }
   .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { white-space: nowrap; padding: 6px 10px; }
+  .nav-links a { white-space: nowrap; padding: 6px 8px; font-size: 12px; }
 }
 
 /* ---------- Buttons ---------- */
@@ -314,7 +314,7 @@ section { scroll-margin-top: 72px; }
 .trio > * { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: var(--surface-2); }
 
 /* ---------- Other projects ---------- */
-.mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 64px; }
+.mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; margin-top: 64px; }
 @media (max-width: 720px) { .mini-grid { grid-template-columns: 1fr; } }
 .mini { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; background: var(--surface); display: flex; flex-direction: column; gap: 10px; }
 .mini-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
