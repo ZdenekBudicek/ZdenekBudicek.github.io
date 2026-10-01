@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffb020'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='%231a1204'%3EZB%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=20261001172640">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261001180958">
   <script>
     document.documentElement.classList.remove('no-js');
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -304,12 +304,14 @@
             <li data-i18n="fc.b4"><strong>Monetisation &amp; monitoring</strong>: ad mediation, in-app purchases, Firebase Crashlytics and Remote Config, GDPR/US consent flow.</li>
             <li data-i18n="fc.b5"><strong>Testing &amp; releases</strong>: 3,000+ EditMode/PlayMode tests, scripted Android &amp; iOS release builds, written release and crash audits.</li>
           </ul>
+          <p class="note" data-i18n="fc.sample">Public C# case study: prevent a fresh anonymous save from replacing advanced account progress after sign-in. Extracted decision rules, an executable example and boundary tests; the full game stays private.</p>
           <ul class="tag-list" aria-label="Tech used">
             <li class="tag">Unity 6</li><li class="tag">C#</li><li class="tag">UGS Cloud Code (JS)</li><li class="tag">Firebase</li><li class="tag">Android / iOS</li><li class="tag">NUnit</li>
           </ul>
           <div class="project-links">
             <a class="btn btn-sm btn-primary" href="https://play.google.com/store/apps/details?id=com.Chrone.SquareSpin" target="_blank" rel="noopener">Google Play ↗</a>
             <a class="btn btn-sm" href="https://4cornersplay.online/" target="_blank" rel="noopener" data-i18n="fc.site">Game website ↗</a>
+            <a class="btn btn-sm" href="https://github.com/ZdenekBudicek/fourcorners-save-conflicts" target="_blank" rel="noopener" data-i18n="fc.source">Save conflict resolver · source ↗</a>
           </div>
         </div>
       </article>
@@ -371,12 +373,14 @@
             <div class="project-meta-text"><strong data-i18n="ls.meta">CornerForge · next game</strong><span data-i18n="d.ls">Sep 2026 – present</span></div>
           </div>
           <h3>Spin Lock <span class="pill pill-wip" data-i18n="ls.pill">IN DEVELOPMENT</span></h3>
-          <p class="project-lead" data-i18n="ls.lead">A one-tap timing game: a needle sweeps around a lock and you tap when it's over a target. Ten levels so far, ending with a three-phase boss behind a sealed door.</p>
+          <p class="project-lead" data-i18n="ls.lead">A one-tap timing game: a needle sweeps around a lock and you tap when it reaches a target. A campaign with changing mechanics and boss encounters, currently in development.</p>
           <ul class="bullets">
-            <li data-i18n="ls.b1"><strong>Balance by simulation</strong>: a .NET player-model simulator and editor audits (campaign, rush waves, boss) — 120 seeded campaign runs checked before a build goes out.</li>
+            <li data-i18n="ls.b1"><strong>Public balance simulator</strong>: real C# game rules tested against four assumed player profiles. Seeded runs, retry analysis and JSON reports make difficulty changes measurable and reproducible.</li>
             <li data-i18n="ls.b2">Small Python tools for generating sound and VFX assets.</li>
           </ul>
           <ul class="tag-list" aria-label="Tech used"><li class="tag">Unity 6</li><li class="tag">C#</li><li class="tag">.NET 9</li><li class="tag">Python</li></ul>
+          <p class="note" data-i18n="ls.sample">Standalone .NET sample with regression checks. Player profiles are design assumptions; real playtests are still needed.</p>
+          <div class="project-links"><a class="btn btn-sm" href="https://github.com/ZdenekBudicek/lockspin-balance-simulator" target="_blank" rel="noopener" data-i18n="ls.source">Balance simulator · source ↗</a></div>
         </div>
       </article>
 
@@ -410,8 +414,14 @@
         </div>
       </article>
 
-      <p class="subhead" data-i18n="mini.h">Smaller projects</p>
+      <p class="subhead" data-i18n="mini.h">More public projects</p>
       <div class="mini-grid">
+        <article class="mini reveal" id="shop-sql">
+          <div class="mini-top"><h4 data-i18n="mini.shop.h">SQL shop inventory</h4><span class="mini-year">2023 / 2026</span></div>
+          <p data-i18n="mini.shop">Python / PostgreSQL inventory and orders: atomic stock updates, row locks to prevent overselling, repeat-safe cancellation and employee roles. Substantially refactored public edition with real database concurrency tests.</p>
+          <ul class="tag-list"><li class="tag">Python</li><li class="tag">PostgreSQL</li><li class="tag">Transactions</li><li class="tag">pytest</li></ul>
+          <a class="btn btn-sm" href="https://github.com/ZdenekBudicek/shop-inventory-sql" target="_blank" rel="noopener" data-i18n="src.link">Source code ↗</a>
+        </article>
         <article class="mini reveal">
           <div class="mini-top"><h4>zipfill</h4><span class="mini-year">2026</span></div>
           <p data-i18n="mini.zip">C# command-line tool that recovers files Windows Explorer silently skips when unpacking macOS zips (long paths, Unicode normalisation). CRC32-verified, never overwrites, with a regression test script.</p>
@@ -565,7 +575,7 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/i18n.js?v=20261001172640" defer></script>
-<script src="assets/js/site.js?v=20261001172640" defer></script>
+<script src="assets/js/i18n.js?v=20261001180958" defer></script>
+<script src="assets/js/site.js?v=20261001180958" defer></script>
 </body>
 </html>
