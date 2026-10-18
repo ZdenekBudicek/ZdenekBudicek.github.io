@@ -38,6 +38,8 @@
     document.documentElement.lang = lang;
     $$('.lang-switch button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
     $$('.lang-switch').forEach((sw) => { sw.dataset.active = lang; });
+    // The tracker demo opens in the same language as the page.
+    $$('a[data-demo]').forEach((a) => { a.setAttribute('href', 'demo/portfolio-tracker/?lang=' + lang); });
     try { localStorage.setItem('lang', lang); } catch (e) {}
     langListeners.forEach((fn) => fn());
   };
