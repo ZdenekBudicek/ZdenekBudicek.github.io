@@ -212,7 +212,7 @@
         log.innerHTML = t('js.cl.fixLog');
         for (const f of st.files) {
           if (!f.status.length) continue;
-          if (f.dups) { f.rows -= f.dups; await write(`<span class="g">✓</span> ${f.name} — ${t('js.cl.drop')} (${f.dups})\n`); }
+          if (f.dups) { await write(`<span class="g">✓</span> ${f.name} — ${t('js.cl.drop')} (${f.dups})\n`); }
           if (f.alt) await write(`<span class="g">✓</span> ${f.name} — ${t('js.cl.rename')} “${f.alt}” → “price”\n`);
           f.status = []; f.fixed = true; render();
         }
