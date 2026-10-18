@@ -100,7 +100,7 @@ window.I18N_CS = {
   "tr.b2": "<strong>České daňové výpočty jako čisté, otestované funkce</strong>: FIFO po jednotlivých nákupech s kurzy ČNB, tříletý časový test a rozpis příjmů z prodejů vůči limitu 100&nbsp;000 Kč. Daňová rezidence se nastavuje každému uživateli.",
   "tr.b3": "<strong>Finanční údaje firem</strong> uložené v PostgreSQL a obnovované nočním workerem v GitHub Actions; nově přidaná firma se stáhne hned na vyžádání, s limitem pro každého uživatele.",
   "tr.b4": "<strong>Kalkulačka férové ceny</strong>: DCF s tabulkou citlivosti, oceňovací násobky, reverzní DCF a dividendový model, s nastavitelnými předpoklady.",
-  "tr.b5": "<strong>Obnovitelná synchronizace s brokerem</strong> a import výpisů s <strong>detekcí duplicit</strong>; plánované stahování cen se záložními zdroji a sdílenou cache. Přes 600 automatických testů (Vitest).",
+  "tr.b5": "<strong>Obnovitelná synchronizace s brokerem</strong> a import výpisů s <strong>detekcí duplicit</strong>; plánované stahování cen se záložními zdroji a sdílenou cache. 620 automatických testů (Vitest), CI na GitHubu prochází.",
 
   "bm.flow": "Co jsem postavil v BuiltMind — tok dat",
   "bm.n1": "Weby developerů",
