@@ -14,9 +14,9 @@ window.I18N_CS = {
   "nav.skills": "Dovednosti",
   "nav.contact": "Kontakt",
 
-  "hero.eyebrow": "Hledám remote práci · vývoj v Pythonu · automatizace · aplikační podpora",
-  "hero.h1": "V Pythonu <em>automatizuji úlohy, propojuji systémy</em> a vyvíjím interní&nbsp;nástroje.",
-  "hero.lede": "Mám 16 měsíců placené praxe s Pythonem z <strong>BuiltMind</strong>, kde jsem pracoval na dálku na částečný úvazek. Napsal jsem tam <strong>přes 100 produkčních scraperů</strong> běžících na AWS Lambda a interní nástroje. Spoluzaložil jsem CornerForge a vyvíjel hru <strong>4Corners</strong>, která je na Google Play. Vytvořil jsem také <strong>Trackoru</strong>, full-stack aplikaci v TypeScriptu pro sledování investic, kterou si tu můžete vyzkoušet.",
+  "hero.eyebrow": "Hledám remote práci · vývoj softwaru · automatizace · aplikační podpora",
+  "hero.h1": "Jako vývojář <em>automatizuji úlohy, propojuji systémy</em> a vyvíjím interní&nbsp;nástroje.",
+  "hero.lede": "Hlavně Python, k tomu TypeScript, SQL a&nbsp;C#. Mám 16 měsíců placené praxe s Pythonem z <strong>BuiltMind</strong>, kde jsem pracoval na dálku na částečný úvazek. Napsal jsem tam <strong>přes 100 produkčních scraperů</strong> běžících na AWS Lambda a interní nástroje. Spoluzaložil jsem CornerForge a vyvíjel hru <strong>4Corners</strong>, která je na Google Play. Vytvořil jsem také <strong>Trackoru</strong>, full-stack aplikaci v TypeScriptu pro sledování investic, kterou si tu můžete vyzkoušet.",
   "hero.cta1": "Moje projekty",
   "hero.cta2": "Vyzkoušet demo",
   "ref.head": "Reference · BuiltMind",
