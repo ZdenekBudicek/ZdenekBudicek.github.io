@@ -20,7 +20,7 @@ window.I18N_CS = {
   "hero.cta1": "Moje projekty",
   "hero.cta2": "Vyzkoušet demo",
   "ref.head": "Reference · BuiltMind",
-  "ref.pill": "PODEPSANÝ DOPIS",
+  "ref.pill": "PÍSEMNÉ DOPORUČENÍ",
   "ref.read": "Celý doporučující dopis ↗",
 
   "stat.1u": "měsíců",
@@ -99,7 +99,7 @@ window.I18N_CS = {
   "tr.b1": "<strong>PostgreSQL s row-level security</strong>; triggery drží pozice a hotovost v souladu s transakcemi. API klíče brokerů jsou <strong>šifrované v databázi</strong> (pgcrypto + Vault).",
   "tr.b2": "<strong>Doménová logika jako čisté, otestované funkce</strong>: česká daňová pravidla (FIFO po jednotlivých nákupech s kurzy ČNB, tříletý časový test) a kalkulačka férové ceny (DCF, oceňovací násobky).",
   "tr.b3": "<strong>Finanční údaje firem</strong> uložené v PostgreSQL a obnovované nočním workerem v GitHub Actions; nově přidaná firma se stáhne hned na vyžádání, s limitem pro každého uživatele.",
-  "tr.b5": "<strong>Obnovitelná synchronizace s brokerem</strong> a import výpisů s <strong>detekcí duplicit</strong>; plánované stahování cen se záložními zdroji a sdílenou cache. 620 automatických testů (Vitest), které spouští CI workflow v repozitáři.",
+  "tr.b5": "<strong>Obnovitelná synchronizace s brokerem</strong> a import výpisů s <strong>detekcí duplicit</strong>; plánované stahování cen se záložními zdroji a sdílenou cache. Přes 750 automatických testů (Vitest), které spouští CI workflow v repozitáři.",
 
   "bm.flow": "Co jsem postavil v BuiltMind — tok dat",
   "bm.n1": "Weby developerů",
