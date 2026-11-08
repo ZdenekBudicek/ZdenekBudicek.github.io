@@ -97,6 +97,7 @@ window.I18N_CS = {
   "cs2.b1": "<strong>Hráčské ratingy přenášené mezi týmy</strong>, takže změna soupisky posune cenu. Na 401 sériích se změněnou soupiskou snížila data o hráčích log loss z 0,596 na 0,514.",
   "cs2.b2": "<strong>Jeden model pro celou nabídku BO3</strong>: vítěz série, počet map, handicap, přesné skóre i první mapa si navzájem neodporují. Nástroj pro tradera ukáže, jak náhradník přecení každý trh a proč.",
   "cs2.b3": "<strong>Postavený tak, aby šel ověřit</strong>: validace v časovém pořadí, předzápasový záznam chráněný proti úpravám a pevné pravidlo, kdy smí vyzyvatel nahradit živý model.",
+  "cs2.dash": "Dashboard pro experty ↗",
   "cs2.note": "Kurzy sázkové kanceláře Pinnacle předpovídají výsledky zápasů stále přesněji než můj model, takže netvrdím, že je lepší než trh. Dva další nápady na novějších datech neuspěly a jsou zdokumentované jako zamítnuté. Surová data nejsou zveřejněná.",
   "src.link": "Zdrojový kód ↗",
   "tr.t1": "Přehled",
