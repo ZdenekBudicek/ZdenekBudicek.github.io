@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffb020'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='%231a1204'%3EZB%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=20261109010203">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261109020111">
   <script>
     document.documentElement.classList.remove('no-js');
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -391,12 +391,12 @@
         <div class="project-media">
           <div class="media-frame">
             <div class="pipeline">
-              <p class="pipeline-title" data-i18n="cs2.mt">Backtest · 720 priced series</p>
+              <p class="pipeline-title" data-i18n="cs2.mt">Backtest · 676 priced series</p>
               <div class="pipe-sub">
-                <div class="pipe-node"><b>0.646</b><span data-i18n="cs2.m1">First model, log loss</span></div>
-                <div class="pipe-node"><b>0.604</b><span data-i18n="cs2.m2">Model v7, log loss</span></div>
-                <div class="pipe-node"><b>0.580</b><span data-i18n="cs2.m3">Pinnacle, margin removed</span></div>
-                <div class="pipe-node"><b>37</b><span data-i18n="cs2.m4">automated tests, many against data leakage</span></div>
+                <div class="pipe-node"><b>0.642</b><span data-i18n="cs2.m1">First model, log loss</span></div>
+                <div class="pipe-node"><b>0.607</b><span data-i18n="cs2.m2">Final model, log loss</span></div>
+                <div class="pipe-node"><b>0.576</b><span data-i18n="cs2.m3">Pinnacle, margin removed</span></div>
+                <div class="pipe-node"><b>12</b><span data-i18n="cs2.m4">automated tests, most against data leakage</span></div>
               </div>
             </div>
           </div>
@@ -406,12 +406,12 @@
           <h3><span data-i18n="cs2.h">CS2 pre-match pricing model</span> <span class="pill pill-wip" data-i18n="cs2.pill">RESEARCH</span></h3>
           <p class="project-lead" data-i18n="cs2.lead">A walk-forward model that prices professional Counter-Strike 2 matches from public results and measures itself against the Pinnacle market.</p>
           <ul class="bullets">
-            <li data-i18n="cs2.b1"><strong>Player ratings carried across teams</strong>, so a roster change moves the price. On 401 series with changed rosters, player data cut log loss from 0.596 to 0.514.</li>
-            <li data-i18n="cs2.b2"><strong>One model for the whole BO3 book</strong>: series winner, total maps, handicap, exact score and first map stay consistent. A trader tool shows how a stand-in reprices each market and why.</li>
-            <li data-i18n="cs2.b3"><strong>Built to be checked</strong>: time-ordered validation, a tamper-evident pre-match log, and a fixed rule for when a challenger may replace the live model.</li>
+            <li data-i18n="cs2.b1"><strong>Player ratings carried across teams</strong>, so a roster change moves the price. On 394 series with changed rosters, player data cut log loss from 0.607 to 0.499.</li>
+            <li data-i18n="cs2.b2"><strong>An expert dashboard with a match price tool</strong>: team trends, player ratings, roster changes and map pool shifts, plus fair odds for any top-30 matchup and what moves them.</li>
+            <li data-i18n="cs2.b3"><strong>Built to be checked</strong>: time-ordered validation, tests against data leakage, and open code built on public results.</li>
           </ul>
-          <ul class="tag-list" aria-label="Tech used"><li class="tag">Python</li><li class="tag">NumPy</li><li class="tag">scikit-learn</li><li class="tag">pytest</li></ul>
-          <p class="note" data-i18n="cs2.note">Pinnacle's betting odds still predict match results more accurately than my model, so I do not claim it beats the market. Two further ideas failed on later data and are documented as rejected. Raw data is not published.</p>
+          <ul class="tag-list" aria-label="Tech used"><li class="tag">Python</li><li class="tag">NumPy</li><li class="tag">pytest</li></ul>
+          <p class="note" data-i18n="cs2.note">Pinnacle's betting odds still predict match results more accurately than my model, so I do not claim it beats the market. The model uses public Liquipedia results only. Raw data is not published.</p>
           <div class="project-links"><a class="btn btn-sm" href="cs2/" target="_blank" rel="noopener" data-i18n="cs2.dash">Expert dashboard ↗</a><a class="btn btn-sm" href="https://github.com/ZdenekBudicek/cs2-prematch-model" target="_blank" rel="noopener" data-i18n="src.link">Source code ↗</a></div>
         </div>
       </article>
@@ -608,7 +608,7 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/i18n.js?v=20261109010203" defer></script>
-<script src="assets/js/site.js?v=20261109010203" defer></script>
+<script src="assets/js/i18n.js?v=20261109020111" defer></script>
+<script src="assets/js/site.js?v=20261109020111" defer></script>
 </body>
 </html>
