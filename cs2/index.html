@@ -67,6 +67,9 @@ details{margin-top:12px;font-size:14px;color:var(--text-2)}summary{cursor:pointe
 details.method{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px}details.method p{margin:10px 0;max-width:80ch}
 button.more{all:unset;cursor:pointer;color:var(--accent);font-size:14px;margin-top:10px;display:inline-block}
 #tip{position:fixed;z-index:20;pointer-events:none;background:var(--surface-2);border:1px solid var(--line-2);border-radius:8px;padding:7px 10px;font-size:13px;line-height:1.4;max-width:260px;display:none;box-shadow:0 8px 24px rgba(0,0,0,.3)}#tip b{font-weight:600}
+.odd{background:var(--surface-2);border-radius:8px;padding:12px 14px}.odd h3{margin:0}.odd b{display:block;font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.25}.odd span.p{color:var(--text-2);font-variant-numeric:tabular-nums}.odd small{display:block;color:var(--text-3);font-size:12px;margin-top:4px;white-space:normal}
+.split{display:flex;gap:2px;height:10px}.split i{display:block;height:100%}.split i:first-child{background:var(--s1);border-radius:4px 0 0 4px}.split i:last-child{background:var(--s2);border-radius:0 4px 4px 0}
+[hidden]{display:none!important}
 footer{padding:26px 0 44px;color:var(--text-3);font-size:13px}footer p{margin:0 0 6px;max-width:82ch}
 @media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}.bar nav{display:none}.bar .seg{margin-left:auto}.card{padding:14px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -75,7 +78,7 @@ footer{padding:26px 0 44px;color:var(--text-3);font-size:13px}footer p{margin:0 
 <body>
 <header class="bar"><div class="wrap">
   <a class="back" href="../"><span class="en">← Portfolio</span><span class="cs">← Portfolio</span></a>
-  <nav><a href="#pool"><span class="en">Map pool</span><span class="cs">Map pool</span></a><a href="#teams"><span class="en">Teams</span><span class="cs">Týmy</span></a><a href="#players"><span class="en">Players</span><span class="cs">Hráči</span></a><a href="#moves"><span class="en">Roster changes</span><span class="cs">Změny soupisek</span></a><a href="#method"><span class="en">Method</span><span class="cs">Metoda</span></a></nav>
+  <nav><a href="#price" id="priceNav"><span class="en">Pricing</span><span class="cs">Ceny</span></a><a href="#pool"><span class="en">Map pool</span><span class="cs">Map pool</span></a><a href="#teams"><span class="en">Teams</span><span class="cs">Týmy</span></a><a href="#players"><span class="en">Players</span><span class="cs">Hráči</span></a><a href="#moves"><span class="en">Roster changes</span><span class="cs">Změny soupisek</span></a><a href="#method"><span class="en">Method</span><span class="cs">Metoda</span></a></nav>
   <div class="seg" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="cs">CZ</button></div>
 </div></header>
 <main class="wrap">
@@ -85,6 +88,26 @@ footer{padding:26px 0 44px;color:var(--text-3);font-size:13px}footer p{margin:0 
     <p class="cs">Pracovní přehled profesionálního Counter-Strike 2 pro lidi, kteří oceňují zápasy: kam se vyvíjí rating týmů, které mapy přicházejí a odcházejí z map poolu a co následovalo po změnách soupisek.</p>
     <p class="asof" id="asof"></p>
   </div>
+
+  <section id="price" hidden>
+    <h2><span class="en">Price a match</span><span class="cs">Ocenit zápas</span></h2>
+    <p class="finding" id="priceFinding"></p>
+    <div class="card">
+      <div class="controls">
+        <label class="f"><span class="en">Team A</span><span class="cs">Tým A</span> <select id="pa"></select></label>
+        <button class="more" id="swap" style="margin:0"><span class="en">Swap</span><span class="cs">Prohodit</span></button>
+        <label class="f"><span class="en">Team B</span><span class="cs">Tým B</span> <select id="pb"></select></label>
+        <div class="seg" role="group" aria-label="Format" id="boSeg"><button data-bo="1">BO1</button><button data-bo="3">BO3</button></div>
+        <label class="f"><span class="en">Margin</span><span class="cs">Marže</span> <select id="pm"><option value="0">0 %</option><option value="0.03">3 %</option><option value="0.05">5 %</option><option value="0.08">8 %</option></select></label>
+      </div>
+      <div class="two" style="margin-bottom:10px" id="odds"></div>
+      <div class="split" id="split" aria-hidden="true"></div>
+      <div class="two" style="margin:18px 0 0">
+        <div style="grid-column:1/-1"><h3><span class="en">What moves the price</span><span class="cs">Co hýbe cenou</span></h3><p class="sub"><span class="en">Each input's contribution in log-odds. Blue pushes towards team A, orange towards team B. The inputs overlap and offset each other: form can push against a team on a winning run because the ratings have already counted those wins. Read the total, not one bar.</span><span class="cs">Příspěvek každého vstupu v log-odds. Modrá tlačí k týmu A, oranžová k týmu B. Vstupy se překrývají a vzájemně vyvažují: forma může tlačit proti týmu v sérii výher, protože ratingy už ty výhry započítaly. Čti celek, ne jeden sloupec.</span></p><div class="shift" id="drivers"></div></div>
+      </div>
+      <p class="sub" style="margin:16px 0 0"><span class="en">Series winner only. Research estimate, before the veto, with the last known rosters and data to the date above. It does not see stand-ins or map bans. Built from Liquipedia results only, where about 8% of series have the wrong format because maps are missing, so total maps and handicap are not priced. In testing this model was less accurate than Pinnacle (log loss 0.607 against 0.576 on 676 series). Not betting advice.</span><span class="cs">Jen vítěz série. Výzkumný odhad před vetem, s posledními známými soupiskami a daty k výše uvedenému dni. Nevidí záskoky ani zákazy map. Vychází jen z výsledků na Liquipedii, kde má asi 8 % sérií kvůli chybějícím mapám špatný formát, proto se neoceňuje počet map ani handicap. V testu byl tento model méně přesný než Pinnacle (log loss 0,607 proti 0,576 na 676 sériích). Nejde o sázkové doporučení.</span></p>
+    </div>
+  </section>
 
   <section id="pool">
     <h2><span class="en">Map pool and meta shifts</span><span class="cs">Map pool a posuny v metě</span></h2>
@@ -160,6 +183,8 @@ footer{padding:26px 0 44px;color:var(--text-3);font-size:13px}footer p{margin:0 
       <p class="cs"><b>Data.</b> Výsledky map a soupisky z Liquipedie, turnaje S, A a B-tier od října 2023. Čísla na této stránce jsou z těchto dat odvozená a sdílená pod licencí CC-BY-SA 3.0.</p>
       <p class="en"><b>Ratings.</b> The same team and player ratings that feed the pre-match model in the project. Team Elo uses K=32 scaled by round margin. Player ratings use K=64 and the event roster.</p>
       <p class="cs"><b>Ratingy.</b> Stejné týmové a hráčské ratingy, které vstupují do předzápasového modelu v projektu. Týmové Elo používá K=32 škálované rozdílem kol. Hráčské ratingy používají K=64 a soupisku na turnaji.</p>
+      <p class="en"><b>Prices.</b> A logistic model on the project's v7 inputs without its wider external rating, trained on Liquipedia results alone. Prices are fair odds unless a margin is selected.</p>
+      <p class="cs"><b>Ceny.</b> Logistický model se vstupy v7 z projektu bez širšího externího ratingu, trénovaný jen na výsledcích z Liquipedie. Ceny jsou férové kurzy, pokud nevybereš marži.</p>
       <p class="en"><b>What is missing.</b> No rounds, kills, ADR, economy, utility or CT and T sides, because this data has only map scores and rosters. Those need premium match data. Lower-tier teams can hold inflated ratings when they rarely meet the top teams.</p>
       <p class="cs"><b>Co chybí.</b> Žádná kola, killy, ADR, ekonomika, utility ani strany CT a T, protože tato data mají jen skóre map a soupisky. Na to jsou potřeba prémiová data ze zápasů. Týmy z nižších soutěží mohou mít nafouknutý rating, pokud se s nejlepšími potkávají málo.</p>
       <p class="en"><b>Snapshot.</b> A static page generated from the project by <code>cs2_expert_data.py</code>. Research only, not betting advice.</p>
@@ -172,6 +197,7 @@ footer{padding:26px 0 44px;color:var(--text-3);font-size:13px}footer p{margin:0 
 </footer>
 <div id="tip" role="status"></div>
 <script src="expert_data.js"></script>
+<script src="expert_prices.js"></script>
 <script>
 (() => {
 const D = window.CS2_EXPERT, $ = (id) => document.getElementById(id);
@@ -313,11 +339,45 @@ function renderMoves() {
   const b = $('moreMoves'); b.style.display = D.moves.length > 15 ? '' : 'none'; b.textContent = S.allMoves ? t('Show fewer', 'Zobrazit méně') : t(`Show all ${D.moves.length}`, `Zobrazit všech ${D.moves.length}`);
 }
 
+const P = window.CS2_PRICES;
+const LABEL = { elo: ['Team rating', 'Rating týmu'], form: ['Recent form', 'Forma'], pelo: ['Player ratings', 'Hráčské ratingy'], wide: ['Rating from all results', 'Rating ze všech výsledků'], rest: ['Rest days', 'Dny odpočinku'], pexp: ['Player experience', 'Zkušenost hráčů'], wide_unc: ['Sample size of results', 'Počet výsledků'], pfast: ['Recent player trend', 'Trend hráčů'], prs: ['Round share by players', 'Podíl kol hráčů'], tree: ['Combined pattern effects', 'Kombinované vzory'] };
+if (P) { S.a = P.teams[0]; S.b = P.teams[1]; S.bo = 3; S.margin = 0; $('price').hidden = false; } else { $('priceNav').remove(); }
+function quoteFor(a, b, bo) {
+  const i = P.teams.indexOf(a), j = P.teams.indexOf(b), flip = i > j, r = P.pairs[flip ? `${j}-${i}` : `${i}-${j}`];
+  const raw = bo === 1 ? r[0] : r[2], parts = bo === 1 ? r[1] : r[3];
+  return { p: flip ? 1 - raw : raw, parts: P.keys.map((k, n) => ({ k, v: flip ? -parts[n] : parts[n] })) };
+}
+function renderPrice() {
+  if (!P) return;
+  const q = quoteFor(S.a, S.b, S.bo), odd = (x) => (x > 0 ? num(1 / (x * (1 + S.margin)), 2) : '–');
+  const options = (sel) => P.teams.map((n, i) => `<option value="${esc(n)}"${n === sel ? ' selected' : ''}>${i + 1}. ${esc(n)}</option>`).join('');
+  $('pa').innerHTML = options(S.a); $('pb').innerHTML = options(S.b); $('pm').value = String(S.margin);
+  document.querySelectorAll('[data-bo]').forEach((b) => b.setAttribute('aria-pressed', Number(b.dataset.bo) === S.bo));
+  const rosterOf = (n) => (team(n).roster.length ? team(n).roster.map((r) => r.p).join(', ') : t('roster not known', 'soupiska není známá'));
+  const shownA = Math.round(q.p * 1000) / 1000;
+  const tile = (n, p, shown) => `<div class="odd"><h3>${esc(n)}</h3><b>${odd(p)}</b><span class="p">${pct(shown, 1)}</span><small>${esc(rosterOf(n))}</small></div>`;
+  $('odds').innerHTML = tile(S.a, q.p, shownA) + tile(S.b, 1 - q.p, 1 - shownA);
+  $('split').innerHTML = `<i style="flex:${q.p.toFixed(4)}"></i><i style="flex:${(1 - q.p).toFixed(4)}"></i>`;
+  const drivers = q.parts.filter((x) => Math.abs(x.v) >= 0.005).sort((a, b) => Math.abs(b.v) - Math.abs(a.v));
+  const big = Math.max(...drivers.map((x) => Math.abs(x.v)), 0.01), name = (k) => (LABEL[k] ? LABEL[k][S.lang === 'cs' ? 1 : 0] : k);
+  $('drivers').innerHTML = drivers.map((x) => `<div style="white-space:nowrap;font-size:13px">${esc(name(x.k))}</div><div class="track" data-tip="<b>${esc(name(x.k))}</b><br>${esc(x.v > 0 ? S.a : S.b)}: ${signed(Math.abs(x.v), 2)}"><div class="b ${x.v >= 0 ? 'up' : 'down'}" style="width:calc(${(Math.abs(x.v) / big * 50).toFixed(1)}% - 1px)"></div></div><div class="v">${signed(x.v, 2)}</div>`).join('');
+  $('drivers').style.gridTemplateColumns = '150px 1fr 54px';
+  const top = drivers[0], fav = q.p >= 0.5 ? S.a : S.b, pf = Math.max(q.p, 1 - q.p);
+  $('priceFinding').textContent = t(`In a BO${S.bo} the model makes ${fav} a ${pct(pf, 1)} favourite${top ? `, and ${name(top.k).toLowerCase()} moves the price the most` : ''}. Model data through ${day(P.asof)}.`, `V BO${S.bo} dává model týmu ${fav} šanci ${pct(pf, 1)}${top ? `, cenou nejvíc hýbe ${name(top.k).toLowerCase()}` : ''}. Data modelu do ${day(P.asof)}.`);
+}
+if (P) {
+  $('pa').addEventListener('change', (e) => { if (e.target.value === S.b) S.b = S.a; S.a = e.target.value; renderPrice(); });
+  $('pb').addEventListener('change', (e) => { if (e.target.value === S.a) S.a = S.b; S.b = e.target.value; renderPrice(); });
+  $('pm').addEventListener('change', (e) => { S.margin = Number(e.target.value); renderPrice(); });
+  $('swap').addEventListener('click', () => { [S.a, S.b] = [S.b, S.a]; renderPrice(); });
+  $('boSeg').addEventListener('click', (e) => { const b = e.target.closest('[data-bo]'); if (b) { S.bo = Number(b.dataset.bo); renderPrice(); } });
+}
+
 function renderAll() {
   document.documentElement.lang = S.lang; document.documentElement.classList.toggle('is-cs', S.lang === 'cs');
   document.querySelectorAll('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === S.lang));
   $('asof').textContent = t(`Data through ${day(D.asof)} · ${num(D.maps_total)} maps`, `Data do ${day(D.asof)} · ${num(D.maps_total)} map`);
-  renderPool(); renderRank(); renderTeam(); renderPlayers(); renderMoves();
+  renderPrice(); renderPool(); renderRank(); renderTeam(); renderPlayers(); renderMoves();
 }
 document.addEventListener('click', (e) => {
   const lang = e.target.closest('[data-lang]'), tier = e.target.closest('[data-tier]'), tm = e.target.closest('[data-team]');
