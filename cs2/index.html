@@ -340,7 +340,7 @@ function renderMoves() {
 }
 
 const P = window.CS2_PRICES;
-const LABEL = { elo: ['Team rating', 'Rating týmu'], form: ['Recent form', 'Forma'], pelo: ['Player ratings', 'Hráčské ratingy'], wide: ['Rating from all results', 'Rating ze všech výsledků'], rest: ['Rest days', 'Dny odpočinku'], pexp: ['Player experience', 'Zkušenost hráčů'], wide_unc: ['Sample size of results', 'Počet výsledků'], pfast: ['Recent player trend', 'Trend hráčů'], prs: ['Round share by players', 'Podíl kol hráčů'], tree: ['Combined pattern effects', 'Kombinované vzory'] };
+const LABEL = { elo: ['Team rating', 'Rating týmu'], form: ['Recent form', 'Forma'], pelo: ['Player ratings', 'Hráčské ratingy'], rest: ['Rest days', 'Dny odpočinku'], pexp: ['Player experience', 'Zkušenost hráčů'], pfast: ['Recent player trend', 'Trend hráčů'], prs: ['Round share by players', 'Podíl kol hráčů'] };
 if (P) { S.a = P.teams[0]; S.b = P.teams[1]; S.bo = 3; S.margin = 0; $('price').hidden = false; } else { $('priceNav').remove(); }
 function quoteFor(a, b, bo) {
   const i = P.teams.indexOf(a), j = P.teams.indexOf(b), flip = i > j, r = P.pairs[flip ? `${j}-${i}` : `${i}-${j}`];
@@ -354,7 +354,7 @@ function renderPrice() {
   $('pa').innerHTML = options(S.a); $('pb').innerHTML = options(S.b); $('pm').value = String(S.margin);
   document.querySelectorAll('[data-bo]').forEach((b) => b.setAttribute('aria-pressed', Number(b.dataset.bo) === S.bo));
   const rosterOf = (n) => (team(n).roster.length ? team(n).roster.map((r) => r.p).join(', ') : t('roster not known', 'soupiska není známá'));
-  const shownA = Math.round(q.p * 1000) / 1000;
+  const shownFav = Math.round(Math.max(q.p, 1 - q.p) * 1000) / 1000, shownA = q.p >= 0.5 ? shownFav : 1 - shownFav;
   const tile = (n, p, shown) => `<div class="odd"><h3>${esc(n)}</h3><b>${odd(p)}</b><span class="p">${pct(shown, 1)}</span><small>${esc(rosterOf(n))}</small></div>`;
   $('odds').innerHTML = tile(S.a, q.p, shownA) + tile(S.b, 1 - q.p, 1 - shownA);
   $('split').innerHTML = `<i style="flex:${q.p.toFixed(4)}"></i><i style="flex:${(1 - q.p).toFixed(4)}"></i>`;
