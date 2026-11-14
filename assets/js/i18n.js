@@ -84,7 +84,7 @@ window.I18N_CS = {
   "fc.site": "Web hry ↗",
 
   "tr.open": "Otevřít demo ↗",
-  "cs2.mt": "Zpětný test · 676 sérií s kurzy",
+  "cs2.mt": "Zpětný test · 770 sérií s kurzy",
   "cs2.m1": "První model, log loss",
   "cs2.m2": "Finální model, log loss",
   "cs2.m3": "Pinnacle po odečtení marže",
@@ -94,7 +94,7 @@ window.I18N_CS = {
   "cs2.h": "Předzápasový cenový model pro CS2",
   "cs2.pill": "VÝZKUM",
   "cs2.lead": "Model ověřovaný v časovém pořadí, který z veřejných výsledků oceňuje profesionální zápasy Counter-Strike 2 a poměřuje se s trhem Pinnacle.",
-  "cs2.b1": "<strong>Hráčské ratingy přenášené mezi týmy</strong>, takže změna soupisky posune cenu. Na 394 sériích se změněnou soupiskou snížila data o hráčích log loss z 0,607 na 0,499.",
+  "cs2.b1": "<strong>Hráčské ratingy přenášené mezi týmy</strong>, takže změna soupisky posune cenu. Na 458 sériích se změněnou soupiskou snížila data o hráčích log loss z 0,620 na 0,534.",
   "cs2.b2": "<strong>Dashboard pro experty s nástrojem na ceny</strong>: vývoj týmů, ratingy hráčů, změny soupisek a posuny v map poolu, navíc férové kurzy pro libovolnou dvojici z top 30 a to, co je posouvá.",
   "cs2.b3": "<strong>Postavený tak, aby šel ověřit</strong>: validace v časovém pořadí, testy proti úniku dat a otevřený kód postavený na veřejných výsledcích.",
   "cs2.dash": "Dashboard pro experty ↗",
